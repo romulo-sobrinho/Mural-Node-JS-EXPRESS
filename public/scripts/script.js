@@ -18,6 +18,9 @@ function updatePosts() {
                               <div class="card-body">
                                 <div class="card-text">${post.description}</div>
                               </div>
+                              <div class="card-footer">
+                                <button onclick="deletePost('${post.id}')" class="btn btn-primary">Excluir</button>
+                              </div>
                             </div>`;
         postElements += postElement;
       });
@@ -44,5 +47,22 @@ function newPost() {
       document.getElementById("title").value = "";
       document.getElementById("description").value = "";
     })
+
+}
+
+function deletePost(id) {
+
+  let post = {id}
+  const options = {
+    method: "DELETE",
+    headers: new Headers({ "Content-Type": "application/json"}),
+    body: JSON.stringify(post)
+  }
+
+  fetch("http://localhost:3000/api/delete", options)
+  .then(res => {
+    console.log(res);
+    updatePosts();
+  })
 
 }

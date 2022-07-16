@@ -23,4 +23,12 @@ router.post("/new", bodyParser.json(), (req, res) => {
   res.send("POST adicionado");
 });
 
+router.delete("/delete", bodyParser.json(), (req, res) => {
+  let id = req.body.id;
+
+  posts.deletePost(id);
+
+  res.send("POST excluído");
+});
+
 module.exports = router;

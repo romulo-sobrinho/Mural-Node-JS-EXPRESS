@@ -1,7 +1,12 @@
 module.exports = {
   posts: [
     {
-      id: "adf12",
+      id: "1a2b",
+      title: "teste do mural",
+      description: "Descrição teste"
+    },
+    {
+      id: "4a5b",
       title: "teste do mural",
       description: "Descrição teste"
     }
@@ -13,6 +18,11 @@ module.exports = {
 
   newPost(title, description) {
     this.posts.push({id: generateID(), title, description});
+  },
+
+  deletePost(id) {
+    let indexDelete = this.posts.findIndex(post => post.id === id);
+    this.posts.splice(indexDelete, 1);
   }
 }
 
