@@ -6,7 +6,7 @@
 
 <h1 align="center">MURAL com CRUD</h1>
 <br>
-<h2 align="center"><a href="" target="__blank">Clique aqui e acesse o preview web</a></h2>
+<h2 align="center"><a href="https://romulo-sobrinho.github.io/Mural-Node-JS/" target="__blank">Clique aqui e acesse o preview web</a></h2>
 <br>
 
 <p align="center">Projeto de mural utilizando o CRUD</p>
