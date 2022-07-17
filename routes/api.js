@@ -31,4 +31,14 @@ router.delete("/delete", bodyParser.json(), (req, res) => {
   res.send("POST excluído");
 });
 
+router.put("/put", bodyParser.json(), (req, res) => {
+  let id = req.body.id;
+  let titleUpdate = req.body.titleUpdate;
+  let descriptionUpdate = req.body.descriptionUpdate;
+
+  posts.changePost(id, titleUpdate, descriptionUpdate);
+
+  res.send("POST alterado");
+});
+
 module.exports = router;

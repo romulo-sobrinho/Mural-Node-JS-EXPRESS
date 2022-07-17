@@ -4,11 +4,6 @@ module.exports = {
       id: "1a2b",
       title: "teste do mural",
       description: "Descrição teste"
-    },
-    {
-      id: "4a5b",
-      title: "teste do mural",
-      description: "Descrição teste"
     }
   ],
 
@@ -23,6 +18,12 @@ module.exports = {
   deletePost(id) {
     let indexDelete = this.posts.findIndex(post => post.id === id);
     this.posts.splice(indexDelete, 1);
+  },
+
+  changePost(id, titleUpdate, descriptionUpdate) {
+    let indexChange = this.posts.findIndex(post => post.id === id);
+    this.posts[indexChange].title = titleUpdate;
+    this.posts[indexChange].description = descriptionUpdate;
   }
 }
 
